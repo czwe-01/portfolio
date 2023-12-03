@@ -1,0 +1,9 @@
+.navbar {
+  overflow: hidden;
+  background: radial-gradient(circle, black 10%, transparent 11%);
+  background-size: 0.62em 0.62em;
+  opacity: 1;
+  background-color: #000;
+  width: max-content;
+  z-index: 98;
+}

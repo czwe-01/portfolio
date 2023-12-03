@@ -1,0 +1,94 @@
+.closed-button {
+  background-color: #000;
+  width: max-content;
+  padding: 15px;
+  position: absolute;
+  right: 0.6em;
+  top: 0.6em;
+}
+
+.button {
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 99;
+  display: none;
+  transition: 2s;
+}
+
+.opened-button {
+  background-color: #d1d1d1;
+  padding: 15px;
+  position: absolute;
+  right: 0.6em;
+  top: 0.6em;
+  width: max-content;
+  height: max-content;
+}
+
+.spans {
+  width: max-content;
+  float: right;
+}
+.spans > span,
+.spans > span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #e5e5e5;
+  border-radius: 3px;
+  z-index: 100;
+  transform-origin: 4px 0;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+span:first-child {
+  transform-origin: 0 0;
+}
+span:nth-last-child(2) {
+  transform-origin: 0 100%;
+}
+
+.close-spans > span {
+  opacity: 1;
+  transform: rotate(-45deg) translate(-4px, 6px);
+  background: #ff3b3f;
+}
+.close-spans > span:nth-last-child(3) {
+  opacity: 0;
+  margin: auto;
+  transform: rotate(0) scale(0.2, 0.2);
+}
+
+.close-spans > span:nth-last-child(2) {
+  transform: rotate(45deg) translate(0, -6px);
+}
+
+@keyframes open {
+  0% {
+    height: max-content;
+    width: max-content;
+    transform-origin: right;
+  }
+
+  100% {
+    width: max-content;
+    padding: 15px;
+    border-radius: 5%;
+    position: absolute;
+    right: 0.6em;
+    top: 0.6em;
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    display: block;
+  }
+
+  .row {
+    display: none;
+  }
+}

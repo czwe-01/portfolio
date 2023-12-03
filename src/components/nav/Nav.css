@@ -1,0 +1,186 @@
+:root {
+  --primary-color: #185ee0;
+  --secondary-color: #e6eef9;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.nav-container {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+  height: max-content;
+  right: 10px;
+  align-items: center;
+
+  transform: scale(0.8);
+}
+
+.tabs {
+  display: flex;
+  position: relative;
+  color: #e6eef9;
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.29);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.9px);
+  -webkit-backdrop-filter: blur(8.9px);
+  border: 1px solid rgba(0, 0, 0, 0.27);
+  padding: 0.2em;
+  max-width: max-content;
+  border-radius: 99px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 150px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+}
+
+input[type="radio"] {
+  &:checked {
+    & + label {
+      color: #fff;
+      z-index: 2;
+    }
+  }
+}
+
+input[id="tab-1"] {
+  &:checked {
+    & ~ .glider-x {
+      transform: translateX(0);
+    }
+  }
+}
+
+input[id="tab-2"] {
+  &:checked {
+    & ~ .glider-x {
+      transform: translateX(100%);
+    }
+  }
+}
+
+input[id="tab-3"] {
+  &:checked {
+    & ~ .glider-x {
+      transform: translateX(200%);
+    }
+  }
+}
+
+input[id="tab-4"] {
+  &:checked {
+    & ~ .glider-x {
+      transform: translateX(300%);
+    }
+  }
+}
+
+input[id="tab-5"] {
+  &:checked {
+    & ~ .glider-x {
+      transform: translateX(400%);
+    }
+  }
+}
+
+.glider-x,
+.glider-y {
+  position: absolute;
+  display: flex;
+  height: 50px;
+  width: 150px;
+  background-color: #161616;
+  z-index: 1;
+  border-radius: 99px;
+  transition: 0.25s ease-out;
+}
+
+@media (max-width: 800px) {
+  .tabs {
+    flex-direction: column;
+    height: 300px;
+    background-color: transparent;
+    border-radius: 15px;
+  }
+
+  input[id="tab-1"] {
+    &:checked {
+      & ~ .glider-y {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  input[id="tab-2"] {
+    &:checked {
+      & ~ .glider-y {
+        transform: translateY(100%);
+      }
+    }
+  }
+
+  input[id="tab-3"] {
+    &:checked {
+      & ~ .glider-y {
+        transform: translateY(200%);
+      }
+    }
+  }
+
+  input[id="tab-4"] {
+    &:checked {
+      & ~ .glider-y {
+        transform: translateY(300%);
+      }
+    }
+  }
+
+  input[id="tab-5"] {
+    &:checked {
+      & ~ .glider-y {
+        transform: translateY(400%);
+      }
+    }
+  }
+
+  .nav-container {
+    right: -20px;
+    top: -25px;
+    border-radius: 30px;
+    width: 300px;
+    height: 400px;
+    background-color: #185ee0;
+  }
+
+  .tabs {
+    top: 100px;
+  }
+
+  .nav-container-closed {
+    overflow: hidden;
+    width: 5px;
+    right: 25px;
+    top: 25px;
+    height: 5px;
+  }
+}

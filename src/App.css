@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-image: linear-gradient(
+    to bottom,
+    #000,
+    #20080e,
+    #350b13,
+    #4c0714,
+    #620210,
+    #620210,
+    #620210,
+    #620210,
+    #4c0714,
+    #350b13,
+    #20080e,
+    #000
+  );
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
